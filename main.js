@@ -7,11 +7,12 @@ window.addEventListener('load', () => {
     const list_el = document.querySelector('#tasks');
 
     form.addEventListener('submit', (e) => {
-        if(e.target.content.value == ""){
-            alert("Please include a name");
+        if(e.target.content.value == "" || e.target.id.value == ""){
+            alert("Please include a name and ID");
         }else{
             e.preventDefault();
-            const name = e.target.content.value;
+            const name = e.target.content.value + " (" + e.target.id.value + ")";
+
 
             const person = {
                 meeting: e.target.meetingdetails.value,
